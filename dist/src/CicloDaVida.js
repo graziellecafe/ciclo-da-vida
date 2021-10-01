@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Pessoa_1 = require("./entities/Pessoa");
-const AcaoSocial_1 = require("./services/AcaoSocial");
-const MundoCapitalista_1 = require("./services/MundoCapitalista");
+exports.cicloDaVida = exports.CicloDaVida = void 0;
+const Pessoa_1 = require("../entities/Pessoa");
+const AcaoSocial_1 = require("../services/AcaoSocial");
+const MundoCapitalista_1 = require("../services/MundoCapitalista");
 class CicloDaVida {
     constructor(acaoSocial, mundoCapitalista) {
         this.emprestimoTotalAPagar = 0;
@@ -104,5 +105,7 @@ class CicloDaVida {
         }
     }
 }
-new CicloDaVida(new AcaoSocial_1.AcaoSocial(), new MundoCapitalista_1.MundoCapitalista()).Genesis();
+exports.CicloDaVida = CicloDaVida;
+const cicloDaVida = new CicloDaVida(new AcaoSocial_1.AcaoSocial(), new MundoCapitalista_1.MundoCapitalista()).Genesis();
+exports.cicloDaVida = cicloDaVida;
 //# sourceMappingURL=CicloDaVida.js.map

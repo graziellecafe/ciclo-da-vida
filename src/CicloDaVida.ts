@@ -1,14 +1,13 @@
-import express from 'express';
-import { Pessoa } from "./entities/Pessoa";
-import { AcaoSocial } from "./services/AcaoSocial"
-import { MundoCapitalista } from "./services/MundoCapitalista"
+import { Pessoa } from "../entities/Pessoa";
+import { AcaoSocial } from "../services/AcaoSocial"
+import { MundoCapitalista } from "../services/MundoCapitalista"
 
-class CicloDaVida { 
+export class CicloDaVida { 
     private emprestimoTotalAPagar = 0; 
     private valorDoEmprestimo = 200;  
 
-    private readonly AcaoSocial: AcaoSocial;
-    private readonly MundoCapitalista: MundoCapitalista; 
+    public readonly AcaoSocial: AcaoSocial;
+    public readonly MundoCapitalista: MundoCapitalista; 
 
     public constructor (acaoSocial: AcaoSocial, mundoCapitalista: MundoCapitalista) {
         this.AcaoSocial = acaoSocial; 
@@ -125,4 +124,5 @@ class CicloDaVida {
     
 }
 
-new CicloDaVida(new AcaoSocial(), new MundoCapitalista()).Genesis(); 
+const cicloDaVida = new CicloDaVida(new AcaoSocial(), new MundoCapitalista()).Genesis(); 
+export { cicloDaVida };
