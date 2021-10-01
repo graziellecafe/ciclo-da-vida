@@ -1,9 +1,10 @@
 import { FaseDeCrescimento } from "../enums/FaseDeCrescimento";
-
+import { DadosBancarios } from "./DadosBancarios";
 export class Pessoa {
     private Nome: string; 
     private Idade: number; 
     private Carteira: number; 
+    private DadosBancarios: DadosBancarios;
 
     private constructor(nome: string, idade: number) {
         this.Nome = nome; 
@@ -30,6 +31,15 @@ export class Pessoa {
     public DefinirIdade(idade: number) : void {
         this.Idade = idade;
     }
+
+    public DefinirDadosBancarios(numeroAgencia, numeroDaConta, senha, tipoDeConta): void {
+        this.DadosBancarios = new DadosBancarios({
+            NumeroDaAgencia: numeroAgencia,
+            NumeroDaConta: numeroDaConta,
+            Senha: senha, 
+            TipoDeConta: tipoDeConta
+        });
+    } 
 
     public DefinirSaldoCarteira(dinheiro: number): void {
         this.Carteira = this.Carteira + dinheiro;

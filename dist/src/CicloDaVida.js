@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.cicloDaVida = exports.CicloDaVida = void 0;
+exports.cicloDaVida = void 0;
 const Pessoa_1 = require("../entities/Pessoa");
 const AcaoSocial_1 = require("../services/AcaoSocial");
 const MundoCapitalista_1 = require("../services/MundoCapitalista");
@@ -105,7 +105,6 @@ class CicloDaVida {
         }
     }
 }
-exports.CicloDaVida = CicloDaVida;
-const cicloDaVida = new CicloDaVida(new AcaoSocial_1.AcaoSocial(), new MundoCapitalista_1.MundoCapitalista()).Genesis();
+const cicloDaVida = new CicloDaVida(new AcaoSocial_1.AcaoSocial(), new MundoCapitalista_1.MundoCapitalista());
 exports.cicloDaVida = cicloDaVida;
 //# sourceMappingURL=CicloDaVida.js.map

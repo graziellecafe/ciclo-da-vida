@@ -2,7 +2,7 @@ import { Pessoa } from "../entities/Pessoa";
 import { AcaoSocial } from "../services/AcaoSocial"
 import { MundoCapitalista } from "../services/MundoCapitalista"
 
-export class CicloDaVida { 
+class CicloDaVida { 
     private emprestimoTotalAPagar = 0; 
     private valorDoEmprestimo = 200;  
 
@@ -124,5 +124,5 @@ export class CicloDaVida {
     
 }
 
-const cicloDaVida = new CicloDaVida(new AcaoSocial(), new MundoCapitalista()).Genesis(); 
+const cicloDaVida = new CicloDaVida(new AcaoSocial(), new MundoCapitalista()); 
 export { cicloDaVida };

@@ -1,6 +1,6 @@
 import { AcaoSocial } from "../services/AcaoSocial";
 import { MundoCapitalista } from "../services/MundoCapitalista";
-export declare class CicloDaVida {
+declare class CicloDaVida {
     private emprestimoTotalAPagar;
     private valorDoEmprestimo;
     readonly AcaoSocial: AcaoSocial;
@@ -16,5 +16,5 @@ export declare class CicloDaVida {
     private ValidarPagamentoEmprestimo;
     private ValidarDiaDeDoacao;
 }
-declare const cicloDaVida: void;
+declare const cicloDaVida: CicloDaVida;
 export { cicloDaVida };

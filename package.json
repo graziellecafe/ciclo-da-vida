@@ -2,11 +2,12 @@
   "name": "ciclo-da-vida",
   "version": "1.0.0",
   "description": "Projeto construído a partir da ideia de um 'Ciclo da Vida' de uma pessoa, com o intuito em aprender mais sobre os conceitos de Programação Orientada a Objetos. JavaScript, TypeScript e Node.",
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
+  "main": "dist/src/main.js",
+  "types": "dist/src/main.d.ts",
   "scripts": {
-    "start": "nodemon main.ts",
-    "build": "tsc"
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "ts-node ./src/main.ts"
   },
   "repository": {
     "type": "git",
