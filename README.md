@@ -38,11 +38,11 @@ npm i --save-dev@types/express
 Exercícios
 
 1. Escrever uma classe Banco que deve possuir os seguintes métodos: 
-    1.1. Criar ContaBancaria: este método deve ser estático usando o Design Pattern Factory. Ele deve receber como parâmetro o tipo da conta a ser criada, CPF da pessoa, nome da pessoa, senha da conta. O número da conta e o número da agência deve ser gerado dentro deste método de criar conta. O retorno deste método deve ser um objeto do tipo DadosBancários: 
+    1.1. CriarContaBancaria: este método deve ser estático usando o Design Pattern Factory. Ele deve receber como parâmetro o tipo da conta a ser criada, CPF da pessoa, nome da pessoa, senha da conta. O número da conta e o número da agência deve ser gerado dentro deste método de criar conta. O retorno deste método deve ser um objeto do tipo DadosBancários: 
     
-    Dar como nome do objeto como exemplo DadosBancários que estará dentro da classe Pessoa. 
+    Dar como nome do objeto como exemplo DadosBancários que estará dentro da classe Pessoa. --- OK ---
 
-        1.1.1. Criar uma enum com os tipos de conta permitido: 
+        1.1.1. Criar uma enum com os tipos de conta permitido: ----- OK -----
         * Conta Pessoa Física 
         * Conta Pessoa Jurídica
 
@@ -50,7 +50,7 @@ Exercícios
 
 1.3. A classe Banco deve possuir um método público chamado DepositarDinheiro. Ele deve receber como parâmetro o número da conta, o número da agência, o valor a ser sacado e uma senha de quatro dígitos. 
 
-1.4. A classe Banco deve possuir um método público chamado ExtratoBancário. Ele deve receber como parâmetro o número da conta, o número da agência, e uma senha de quatro dígitos. Este método deve retornar um objeto com a seguinte estrutura: 
+1.4. A classe Banco deve possuir um método público chamado ExtratoBancário. Ele deve receber como parâmetro o número da conta, o número da agência, e uma senha de quatro dígitos. Este método deve retornar um objeto com a seguinte estrutura: --- OK!!! ---
 
 {
     "saldoDisponivel": number, 
@@ -60,7 +60,7 @@ Exercícios
 
 e deve ser uma classe chamada Extrato.  
 
-2. Dentro do MundoCapitalista existem Bancos. Então, injetar a dependência da classe Banco dentro do MundoCapitalista. Quando a Pessoa chegar na fase adulta, ela deve adquirir uma conta bancária. 
+2. Dentro do MundoCapitalista existem Bancos. Então, injetar a dependência da classe Banco dentro do MundoCapitalista. Quando a Pessoa chegar na fase adulta, ela deve adquirir uma conta bancária. ---- OK ----
 
 3. Após 30 dias de trabalho, o salário que a pessoa vai receber deve ser depositado na conta bancária dela. 
 

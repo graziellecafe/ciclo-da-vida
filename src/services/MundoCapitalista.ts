@@ -1,9 +1,11 @@
+import { Banco } from "./Banco";
+
 class Trabalhador {
     Nome: string; 
     Valor: number;
     Dia: number;
     Mes: number; 
-    Ano: number;
+    Ano: number;    
 
     public constructor(nome: string, valor: number, dia: number, mes: number, ano: number) {
         this.Nome = nome; 
@@ -14,10 +16,12 @@ class Trabalhador {
     }
 }
 export class MundoCapitalista {
+    public Banco: Banco;
     private ListaDeTrabalhadores: Array<Trabalhador>;
 
-    public constructor() {
-        this.ListaDeTrabalhadores = new Array<Trabalhador>()
+    public constructor(init?: Partial<Banco>) {
+        Object.assign(this,init);
+        this.ListaDeTrabalhadores = new Array<Trabalhador>();
     }
 
     public Trabalhar(nomeTrabalhador: string, dia: number, mes: number, ano: number): number {
@@ -32,9 +36,10 @@ export class MundoCapitalista {
     }
     
     public CalculaValorDaCompra(): number { 
-        const maxGastos = 50; 
-        const minGastos = 100;  
+        const maxGastos = 400; 
+        const minGastos = 500;  
 
         return Math.ceil(Math.random() * (maxGastos - minGastos) + minGastos);        
     }
 }
+

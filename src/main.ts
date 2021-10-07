@@ -1,5 +1,12 @@
 // import express from "express";
 import { cicloDaVida } from "./CicloDaVida";
+class Main {
+    public Run(): void {
+        cicloDaVida.Genesis();
+    }
+}
+
+new Main().Run();
 
 // const main = express();
 // main.get('/main', (req: any, res:any) => { 
@@ -11,10 +18,3 @@ import { cicloDaVida } from "./CicloDaVida";
 //     console.log('Main is running at http://localhost:5000/main');
 // });
 
-class Main {
-    public Run(): void {
-        cicloDaVida.Genesis();
-    }
-}
-
-new Main().Run();

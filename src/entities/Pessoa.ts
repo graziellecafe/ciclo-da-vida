@@ -1,5 +1,6 @@
 import { FaseDeCrescimento } from "../enums/FaseDeCrescimento";
 import { DadosBancarios } from "./DadosBancarios";
+
 export class Pessoa {
     private Nome: string; 
     private Idade: number; 

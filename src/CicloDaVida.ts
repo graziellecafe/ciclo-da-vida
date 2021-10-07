@@ -1,6 +1,7 @@
-import { Pessoa } from "../entities/Pessoa";
-import { AcaoSocial } from "../services/AcaoSocial"
-import { MundoCapitalista } from "../services/MundoCapitalista"
+import { Pessoa } from "./entities/Pessoa";
+import { AcaoSocial } from "./services/AcaoSocial"
+import { Banco } from "./services/Banco";
+import { MundoCapitalista } from "./services/MundoCapitalista"
 
 class CicloDaVida { 
     private emprestimoTotalAPagar = 0; 
@@ -80,7 +81,7 @@ class CicloDaVida {
         else {                  
             console.log(`[COMPRA NÃO AUTORIZADA] O valor da compra de R$${valorDaCompra} excede seu saldo de R$${pessoa.ObterSaldoCarteira()}.`);
             this.emprestimoTotalAPagar += this.valorDoEmprestimo;
-            console.log(`[EMPRÉSTIMO] Solicitou um empréstimo de R$${this.valorDoEmprestimo}.`);
+            console.log(`[EMPRÉSTIMO] Solicitou um empréstimo de R$${this.valorDoEmprestimo}. Saldo atualizado: R$${pessoa.ObterSaldoCarteira()}`);
             pessoa.DefinirSaldoCarteira(this.valorDoEmprestimo);
             this.RealizaCompra(pessoa, valorDaCompra);
         }
@@ -120,8 +121,7 @@ class CicloDaVida {
                 console.log('\n');
             }                    
         }
-    }
-    
+    }    
 }
 
 const cicloDaVida = new CicloDaVida(new AcaoSocial(), new MundoCapitalista()); 
