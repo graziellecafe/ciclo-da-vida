@@ -16,11 +16,11 @@ class Trabalhador {
     }
 }
 export class MundoCapitalista {
-    public Banco: Banco;
+    public readonly Banco: Banco;
     private ListaDeTrabalhadores: Array<Trabalhador>;
 
-    public constructor(init?: Partial<Banco>) {
-        Object.assign(this,init);
+    public constructor(banco: Banco) {
+        this.Banco = banco;
         this.ListaDeTrabalhadores = new Array<Trabalhador>();
     }
 

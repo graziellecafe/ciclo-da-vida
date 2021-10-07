@@ -23,7 +23,7 @@ export class ContaPessoaFisica extends ContaBancaria {
     }
 }
 
-export class ContaJuridica extends ContaBancaria { 
+export class ContaPessoaJuridica extends ContaBancaria { 
     public Cnpf: string;
 
     constructor (cnpj: string, numeroAgencia: string, numeroConta: string, tipoDeConta: string, senhaDaConta: string, saldoDaConta: number){

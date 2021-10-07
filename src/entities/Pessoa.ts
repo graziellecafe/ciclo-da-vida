@@ -6,6 +6,7 @@ export class Pessoa {
     private Idade: number; 
     private Carteira: number; 
     private DadosBancarios: DadosBancarios;
+    private Cpf: string;
 
     private constructor(nome: string, idade: number) {
         this.Nome = nome; 
@@ -33,14 +34,21 @@ export class Pessoa {
         this.Idade = idade;
     }
 
-    public DefinirDadosBancarios(numeroAgencia, numeroDaConta, senha, tipoDeConta): void {
-        this.DadosBancarios = new DadosBancarios({
-            NumeroDaAgencia: numeroAgencia,
-            NumeroDaConta: numeroDaConta,
-            Senha: senha, 
-            TipoDeConta: tipoDeConta
-        });
+    public ObterDadosBancarios(): DadosBancarios {
+        return this.DadosBancarios;
+    }
+
+    public DefinirDadosBancarios(dados: DadosBancarios): void {
+        this.DadosBancarios = dados;
     } 
+
+    public ObterCpf(): string {
+        return this.Cpf;
+    }
+
+    public DefinirCpf(cpf: string): void {
+        this.Cpf = cpf;
+    }
 
     public DefinirSaldoCarteira(dinheiro: number): void {
         this.Carteira = this.Carteira + dinheiro;

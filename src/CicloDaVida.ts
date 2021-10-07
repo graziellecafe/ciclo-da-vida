@@ -1,6 +1,8 @@
 import { Pessoa } from "./entities/Pessoa";
+import { TipoDeConta } from "./enums/TipoDeConta";
 import { AcaoSocial } from "./services/AcaoSocial"
 import { Banco } from "./services/Banco";
+import { ContaBancaria } from "./services/ContaBancaria";
 import { MundoCapitalista } from "./services/MundoCapitalista"
 
 class CicloDaVida { 
@@ -25,7 +27,7 @@ class CicloDaVida {
         console.log('\n');       
         console.log(`[INÍCIO] Nome: ${pessoa.ObterNome()}`);
         while (vivo) { 
-            if (this.ValidarFaseAdulta(pessoa.ObterIdade())){
+            if (this.ValidarFaseAdulta(pessoa)){
                 this.FaseDeVidaAdulta(pessoa); 
             }          
             
@@ -49,8 +51,20 @@ class CicloDaVida {
         }        
     }
 
-    private ValidarFaseAdulta(idade: number): boolean {
+    private ValidarFaseAdulta(pessoa: Pessoa): boolean {
+        const idade = pessoa.ObterIdade();
         if (idade >= 18 && idade <= 60) {
+            if(!pessoa.ObterCpf()){
+                const gerarCpf = (Math.round(Math.random()*100000)).toString() + (Math.round(Math.random()*10000)).toString() + (Math.round(Math.random()*100)).toString();
+                console.log(gerarCpf);
+                pessoa.DefinirCpf(gerarCpf);
+            } 
+            if (!pessoa.ObterDadosBancarios()){
+                const senha = (Math.round(Math.random()*10000)).toString();
+                const dadosBancarios = this.MundoCapitalista.Banco.CriarContaBancaria(pessoa.ObterCpf(),TipoDeConta.PessoaFisica, senha);
+                pessoa.DefinirDadosBancarios(dadosBancarios); 
+                console.log(pessoa);               
+            }          
             return true;
         }
 
@@ -124,5 +138,10 @@ class CicloDaVida {
     }    
 }
 
-const cicloDaVida = new CicloDaVida(new AcaoSocial(), new MundoCapitalista()); 
+const cicloDaVida = new CicloDaVida(
+    new AcaoSocial(),
+    new MundoCapitalista(
+        new Banco()
+    )
+); 
 export { cicloDaVida };

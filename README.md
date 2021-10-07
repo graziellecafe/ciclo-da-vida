@@ -38,7 +38,7 @@ npm i --save-dev@types/express
 Exercícios
 
 1. Escrever uma classe Banco que deve possuir os seguintes métodos: 
-    1.1. CriarContaBancaria: este método deve ser estático usando o Design Pattern Factory. Ele deve receber como parâmetro o tipo da conta a ser criada, CPF da pessoa, nome da pessoa, senha da conta. O número da conta e o número da agência deve ser gerado dentro deste método de criar conta. O retorno deste método deve ser um objeto do tipo DadosBancários: 
+    1.1. CriarContaBancaria: este método deve ser estático usando o Design Pattern Factory. Ele deve receber como parâmetro o tipo da conta a ser criada, CPF da pessoa, senha da conta. O número da conta e o número da agência deve ser gerado dentro deste método de criar conta. O retorno deste método deve ser um objeto do tipo DadosBancários: 
     
     Dar como nome do objeto como exemplo DadosBancários que estará dentro da classe Pessoa. --- OK ---
 
@@ -60,7 +60,7 @@ Exercícios
 
 e deve ser uma classe chamada Extrato.  
 
-2. Dentro do MundoCapitalista existem Bancos. Então, injetar a dependência da classe Banco dentro do MundoCapitalista. Quando a Pessoa chegar na fase adulta, ela deve adquirir uma conta bancária. ---- OK ----
+2. Dentro do MundoCapitalista existem Bancos. Então, injetar a dependência da classe Banco dentro do MundoCapitalista. Quando a Pessoa chegar na fase adulta, ela deve adquirir uma conta bancária.
 
 3. Após 30 dias de trabalho, o salário que a pessoa vai receber deve ser depositado na conta bancária dela. 
 
